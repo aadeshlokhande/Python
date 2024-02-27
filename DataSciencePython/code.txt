@@ -1,0 +1,13 @@
+class Student:
+    pass
+
+abc = Student()
+abc.name = "abc"
+abc.age = 12
+abc.std = "7th"
+
+xyz = Student()
+xyz.name = "xyz"
+xyz.age = 13
+xyz.std = "8th"
+xyz.handicap = True  # Extra attribute
