@@ -1,0 +1,52 @@
+
+-- columns - fields , attributes
+-- rows - tuple, records
+
+select * 
+from sessionwithsumit.employees_data;
+
+select * 
+from sessionwithsumit.department_data;
+
+
+select sum(salary), count(employee_id)
+from sessionwithsumit.employees_data;
+
+
+
+select sum(salary) as total_salary, 
+max(salary) as max_sal ,min(salary) as min_sal,
+avg(salary)as avg_sal
+from sessionwithsumit.employees_data;
+
+-- Cases of count and distinct count
+
+select count(distinct employee_id) as count_salary, 
+count(distinct manager_id) as count_manager,
+count(distinct department_id) as count_dep
+from sessionwithsumit.employees_data;
+
+
+select count(*)
+from sessionwithsumit.employees_data;
+
+-- group by with aggregation functions -
+
+select department_id, sum(salary) as total_dep_sal, 
+count(employee_id) as cnt, max(salary) as max_sal
+from sessionwithsumit.employees_data
+group by department_id;
+
+-- order by clause
+select department_id, max(salary) as max_sal
+from sessionwithsumit.employees_data
+group by 1
+order by 2 ;
+
+-- group by with two columns - 
+select department_id , manager_id ,  sum(salary)
+from sessionwithsumit.employees_data
+group by department_id , manager_id
+order by department_id 
+limit 5;
+
