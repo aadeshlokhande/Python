@@ -4,8 +4,6 @@ from bs4 import BeautifulSoup
 header = ({'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36', 'Accept-Language':'en-US,en;q=0.5'})
 
 url = "https://www.amazon.in/s?k=smart+watch+for+men&page=2&crid=T29UP548C8TS&qid=1710230873&sprefix=smart+%2Caps%2C229&ref=sr_pg_2"
-
-
 r = requests.get(url,headers=header)
 print(r)
 soup = BeautifulSoup(r.text, "html.parser")
